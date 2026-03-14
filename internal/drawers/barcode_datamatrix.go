@@ -37,9 +37,10 @@ func NewBarcodeDatamatrixDrawer() *ElementDrawer {
 			data := barcode.Data
 
 			const (
-				fnc1 = fmt.Spintf("%s1", barcode.Escape)
 				GS   = byte(29)
 			)
+
+			fnc1 := fmt.Sprintf("%s1", string(barcode.Escape))
 
 			// First occurrence of FNC1 triggers GS1 mode
 			if strings.HasPrefix(data, fnc1) {
