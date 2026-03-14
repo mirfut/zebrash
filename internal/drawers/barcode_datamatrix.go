@@ -37,7 +37,7 @@ func NewBarcodeDatamatrixDrawer() *ElementDrawer {
 			data := barcode.Data
 
 			const (
-				fnc1 = "_1"
+				fnc1 = fmt.Spintf("%s1", barcode.Escape)
 				GS   = byte(29)
 			)
 
